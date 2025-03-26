@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 0 150px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  flex-direction: column;
+  color: black;
+}
+
+.quiz-container {
+  position: relative;
+  z-index: 10;
+  width: 500px;
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.options-container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.feedback {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.earth-container {
+  position: fixed;
+  bottom: -100px;
+  right: -100px;
+  width: 900px;
+  height: 900px;
+  z-index: 1;
+}
+
+.rotating-earth {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  right: -200px;
+  animation: rotate 10s linear infinite;
+  transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.correct {
+  background-color: green;
+  color: white;
+}
+
+.incorrect {
+  background-color: red;
+  color: white;
+}
