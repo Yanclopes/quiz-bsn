@@ -82,3 +82,15 @@ button {
   background-color: red;
   color: white;
 }
+
+.correctNotSelected {
+  background-color: white;
+  color: green;
+  border: 2px solid green;
+}
+
+p{
+  font-size: 0.75rem;
+  color: green;
+  font-style: italic;
+}

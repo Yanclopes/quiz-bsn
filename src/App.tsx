@@ -42,7 +42,9 @@ function App() {
                             ? isCorrect
                                 ? "correct selected"
                                 : "incorrect selected"
-                            : "";
+                            : selectedAnswer !== null && isCorrect
+                                ? "correctNotSelected"
+                                : "";
 
                         return (
                             <button
@@ -54,6 +56,21 @@ function App() {
                             </button>
                         );
                     })}
+                </div>
+
+                <div className="explanation-container">
+                    <p style={{color: selectedAnswer !== null
+                                        ? selectedAnswer == questoes[currentQuestion].respostaCorreta
+                                            ? "Green"
+                                            : "Red"
+                                        : "black"
+                    }}
+                    >
+                        {selectedAnswer !== null
+                            ? questoes[currentQuestion].explicacaoErro[selectedAnswer]  
+                            : ""                            
+                        }
+                    </p> 
                 </div>
             </div>
             <div className="earth-container">
