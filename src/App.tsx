@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { questoes } from "./store/questoes.ts";
 import "./App.css";
-import terra_1 from "./assets/limpo.png";
-import terra_2 from "./assets/poluicao.png";
+import terra_1 from "./assets/high.png";
+import terra_2 from "./assets/mid.png";
+import terra_3 from "./assets/low.png";
 
-const imagens = [terra_1, terra_2];
+const imagens = [terra_1, terra_2, terra_3];
 
 function App() {
     const [errorCount, setErrorCount] = useState(0);

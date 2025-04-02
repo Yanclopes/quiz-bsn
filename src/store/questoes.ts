@@ -102,4 +102,173 @@ export const questoes: Questao[] = [
                          "A eficiência energética é um dos princípios da TI Verde, garantindo que os servidores operem com consumo reduzido sempre que possível.",
                          "A modernização dos data centers com equipamentos mais eficientes reduz o consumo de energia e melhora o desempenho, contribuindo para a sustentabilidade."],
     },
+
+    {
+        pergunta: "",
+        opcoes: ["",
+                 "",
+                 "",
+                 ""],
+        respostaCorreta: 0,
+        explicacaoErro: ["",
+                         "",
+                         "",
+                         "",]
+    },
+
+    {
+        pergunta: "",
+        opcoes: ["",
+                 "",
+                 "",
+                 ""],
+        respostaCorreta: 0,
+        explicacaoErro: ["",
+                         "",
+                         "",
+                         "",]
+    },
+
+    {
+        pergunta: "",
+        opcoes: ["",
+                 "",
+                 "",
+                 ""],
+        respostaCorreta: 0,
+        explicacaoErro: ["",
+                         "",
+                         "",
+                         "",]
+    },
+
+    {
+        pergunta: "",
+        opcoes: ["",
+                 "",
+                 "",
+                 ""],
+        respostaCorreta: 0,
+        explicacaoErro: ["",
+                         "",
+                         "",
+                         "",]
+    },
+
+    {
+        pergunta: "",
+        opcoes: ["",
+                 "",
+                 "",
+                 ""],
+        respostaCorreta: 0,
+        explicacaoErro: ["",
+                         "",
+                         "",
+                         "",]
+    },
+
+    {
+        pergunta: "",
+        opcoes: ["",
+                 "",
+                 "",
+                 ""],
+        respostaCorreta: 0,
+        explicacaoErro: ["",
+                         "",
+                         "",
+                         "",]
+    },
+
+    {
+        pergunta: "",
+        opcoes: ["",
+                 "",
+                 "",
+                 ""],
+        respostaCorreta: 0,
+        explicacaoErro: ["",
+                         "",
+                         "",
+                         "",]
+    },
+
+    {
+        pergunta: "",
+        opcoes: ["",
+                 "",
+                 "",
+                 ""],
+        respostaCorreta: 0,
+        explicacaoErro: ["",
+                         "",
+                         "",
+                         "",]
+    },
+
+    {
+        pergunta: "",
+        opcoes: ["",
+                 "",
+                 "",
+                 ""],
+        respostaCorreta: 0,
+        explicacaoErro: ["",
+                         "",
+                         "",
+                         "",]
+    },
+
+    {
+        pergunta: "",
+        opcoes: ["",
+                 "",
+                 "",
+                 ""],
+        respostaCorreta: 0,
+        explicacaoErro: ["",
+                         "",
+                         "",
+                         "",]
+    },
+
+    {
+        pergunta: "",
+        opcoes: ["",
+                 "",
+                 "",
+                 ""],
+        respostaCorreta: 0,
+        explicacaoErro: ["",
+                         "",
+                         "",
+                         "",]
+    },
+
+    {
+        pergunta: "",
+        opcoes: ["",
+                 "",
+                 "",
+                 ""],
+        respostaCorreta: 0,
+        explicacaoErro: ["",
+                         "",
+                         "",
+                         "",]
+    },
+
+    {
+        pergunta: "",
+        opcoes: ["",
+                 "",
+                 "",
+                 ""],
+        respostaCorreta: 0,
+        explicacaoErro: ["",
+                         "",
+                         "",
+                         "",]
+    },
 ]
