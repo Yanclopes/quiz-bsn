@@ -27,6 +27,8 @@ function App() {
             if (currentQuestion < totalQuestoes - 1) {
                 setCurrentQuestion(currentQuestion + 1);
                 setSelectedAnswer(null);
+            } else {
+                alert("fim de jogo!")
             }
         }, 2000);
     }
