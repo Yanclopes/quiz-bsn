@@ -20,62 +20,65 @@ function App() {
         setSelectedAnswer(optionIndex);
 
         if (optionIndex !== questoes[currentQuestion].respostaCorreta) {
-            setErrorCount(errorCount + 1);
+            setErrorCount((prev) => prev + 1);
         }
 
         setTimeout(() => {
-            if (currentQuestion < totalQuestoes - 1) {
-                setCurrentQuestion(currentQuestion + 1);
+            if (currentQuestion < totalQuestoes) {
+                setCurrentQuestion((prev)=> prev + 1);
                 setSelectedAnswer(null);
-            } else {
-                alert("fim de jogo!")
             }
         }, 2000);
     }
 
     return (
         <div className="quiz-container">
-            <div className="quiz">
-                <h2>{questoes[currentQuestion].pergunta}</h2>
-                <div className="options-container">
-                    {questoes[currentQuestion].opcoes.map((opcao, index) => {
-                        const isCorrect = index === questoes[currentQuestion].respostaCorreta;
-                        const isSelected = selectedAnswer === index;
-                        const buttonClass = isSelected
-                            ? isCorrect
-                                ? "correct selected"
-                                : "incorrect selected"
-                            : selectedAnswer !== null && isCorrect
-                                ? "correctNotSelected"
-                                : "";
+            {currentQuestion >= totalQuestoes &&
+                <h2>Fim de jogo, você acertou um total de {totalQuestoes - errorCount}</h2>
+            }
+            {currentQuestion < totalQuestoes &&
+                <div className="quiz">
+                    <h2>{questoes[currentQuestion].pergunta}</h2>
+                    <div className="options-container">
+                        {questoes[currentQuestion].opcoes.map((opcao, index) => {
+                            const isCorrect = index === questoes[currentQuestion].respostaCorreta;
+                            const isSelected = selectedAnswer === index;
+                            const buttonClass = isSelected
+                                ? isCorrect
+                                    ? "correct selected"
+                                    : "incorrect selected"
+                                : selectedAnswer !== null && isCorrect
+                                    ? "correctNotSelected"
+                                    : "";
 
-                        return (
-                            <button
-                                key={index}
-                                onClick={() => handleAnswer(index)}
-                                className={buttonClass}
-                            >
-                                {opcao}
-                            </button>
-                        );
-                    })}
-                </div>
+                            return (
+                                <button
+                                    key={index}
+                                    onClick={() => handleAnswer(index)}
+                                    className={buttonClass}
+                                >
+                                    {opcao}
+                                </button>
+                            );
+                        })}
+                    </div>
 
-                <div className="explanation-container">
-                    <p style={{color: selectedAnswer !== null
-                                        ? selectedAnswer == questoes[currentQuestion].respostaCorreta
-                                            ? "Green"
-                                            : "Red"
-                                        : "black"
-                    }}
-                    >
-                        {selectedAnswer !== null
-                            ? questoes[currentQuestion].explicacaoErro[selectedAnswer]  
-                            : ""                            
-                        }
-                    </p> 
+                    <div className="explanation-container">
+                        <p style={{color: selectedAnswer !== null
+                                ? selectedAnswer == questoes[currentQuestion].respostaCorreta
+                                    ? "Green"
+                                    : "Red"
+                                : "black"
+                        }}
+                        >
+                            {selectedAnswer !== null
+                                ? questoes[currentQuestion].explicacaoErro[selectedAnswer]
+                                : ""
+                            }
+                        </p>
+                    </div>
                 </div>
-            </div>
+            }
             <div className="earth-container">
                 <img alt="terra" src={imagens[indiceImagem]} className="rotating-earth" />
             </div>
