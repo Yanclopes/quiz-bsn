@@ -464,4 +464,42 @@ export const questoes: Questao[] = [
                          "Essa sequência representa um modelo linear e insustentável, sem considerar práticas ambientais responsáveis.",
                          "São etapas do processo comercial e financeiro, sem ligação direta com os princípios do SGA.",]
     },
+
+    {
+        pergunta: "Quais são os principais benefícios ambientais e sociais do reflorestamento em áreas degradadas?",
+        opcoes: [
+            "Redução da biodiversidade e aumento da erosão do solo",
+            "Aumento da poluição do ar e escassez de água",
+            "Recuperação da biodiversidade, proteção do solo e melhoria do microclima",
+            "Substituição de espécies nativas por exóticas de rápido crescimento",
+            "Expansão urbana e aumento do desmatamento"
+        ],
+        respostaCorreta: 2,
+        explicacaoErro: [
+            "Essa alternativa descreve efeitos negativos, o que vai contra os objetivos do reflorestamento.",
+            "O reflorestamento tende a melhorar a qualidade do ar e o ciclo da água, não piorá-los.",
+            "Correta – o reflorestamento ajuda a restaurar a biodiversidade, proteger o solo e melhorar o clima local.",
+            "O uso de espécies exóticas pode causar desequilíbrios ecológicos, sendo evitado em projetos de reflorestamento sustentável.",
+            "Essa opção trata de consequências negativas da urbanização, não de reflorestamento."
+        ]
+    },
+    
+    {
+        pergunta: "Como escolher as espécies nativas mais adequadas para um projeto de reflorestamento em determinada região?",
+        opcoes: [
+            "Escolhendo apenas espécies com alto valor comercial",
+            "Usando apenas espécies exóticas para acelerar o crescimento",
+            "Selecionando espécies de regiões diferentes para maior diversidade",
+            "Baseando-se nas condições climáticas, tipo de solo e vegetação original da área",
+            "Plantando qualquer espécie disponível no viveiro mais próximo"
+        ],
+        respostaCorreta: 3,
+        explicacaoErro: [
+            "O valor comercial não deve ser o principal critério para reflorestamento ecológico.",
+            "Espécies exóticas podem prejudicar o equilíbrio ecológico local.",
+            "Usar espécies de outras regiões pode gerar impactos negativos à biodiversidade nativa.",
+            "Correta – a escolha deve considerar o ecossistema local para garantir o sucesso e a sustentabilidade do reflorestamento.",
+            "Plantar espécies indiscriminadamente pode comprometer os objetivos do projeto ecológico."
+        ]
+    }
 ]
