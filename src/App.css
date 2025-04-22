@@ -94,3 +94,10 @@ p{
   color: green;
   font-style: italic;
 }
+
+.logo {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  width: 120px;
+}
