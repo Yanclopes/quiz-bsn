@@ -101,3 +101,113 @@ p{
   top: 10px;
   width: 120px;
 }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 0;
+    justify-content: flex-end;
+  }
+
+  .logo{
+    width: 75px;
+  }
+
+  .quiz{
+    padding: 25px;
+    background: white;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    box-shadow: 0 0 10px gray;
+  }
+
+  .quiz-container{
+    width: -webkit-fill-available;
+    z-index: 1;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .earth-container{
+    z-index: -1;
+    width: -webkit-fill-available;
+    left: 0;
+    top: 3rem;
+    bottom: 0;
+    right: 0;
+  }
+
+  .rotating-earth{
+    left: 0;
+    width: -webkit-fill-available;
+    right: 0;
+  }
+
+  h2{
+    font-size: 1.25rem;
+  }
+
+  .endcard{
+    background-color: white;
+    padding: 20px;
+    margin: 10rem 2rem;
+    box-shadow: 0 0 10px gray;
+    border-radius: 15px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+/*
+@media only screen and (min-width: 768px) {
+  body{
+    padding: 0;
+    align-items: center
+  }
+  
+  #root{
+    width: 70%;
+  }
+
+  .rotating-earth{
+    left: 0;
+    width: -webkit-fill-available;
+    right: 0;
+  }
+
+  .earth-container{   
+    width: 30rem;
+    height: 30rem;
+    right: -15rem;
+    top: 5rem;
+    z-index: -1;
+  }
+
+  .logo{
+    z-index: -1;
+  }
+  
+  .quiz{
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+  }
+
+  .quiz-container{
+    width: -webkit-fill-available;
+    z-index: 1;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+}
+*/

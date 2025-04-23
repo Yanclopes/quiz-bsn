@@ -77,7 +77,7 @@ function App() {
         <div className="quiz-container">
             <img className="logo" alt="Unidavi" src={logo} />
             {currentQuestion >= totalQuestoes && (
-                <h2>Fim de jogo, você acertou um total de {totalQuestoes - errorCount}</h2>
+                <h2 className = 'endcard'>Fim de jogo, você acertou um total de {totalQuestoes - errorCount}</h2>
             )}
 
             {currentQuestion < totalQuestoes && (

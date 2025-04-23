@@ -478,7 +478,7 @@ export const questoes: Questao[] = [
         explicacaoErro: [
             "Essa alternativa descreve efeitos negativos, o que vai contra os objetivos do reflorestamento.",
             "O reflorestamento tende a melhorar a qualidade do ar e o ciclo da água, não piorá-los.",
-            "Correta – o reflorestamento ajuda a restaurar a biodiversidade, proteger o solo e melhorar o clima local.",
+            "O reflorestamento ajuda a restaurar a biodiversidade, proteger o solo e melhorar o clima local.",
             "O uso de espécies exóticas pode causar desequilíbrios ecológicos, sendo evitado em projetos de reflorestamento sustentável.",
             "Essa opção trata de consequências negativas da urbanização, não de reflorestamento."
         ]
