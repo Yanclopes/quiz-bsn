@@ -51,7 +51,7 @@ function App() {
         const form = new URLSearchParams();
         form.append('id', id);
         form.append('question', String(currentQuestion));
-        form.append('response', String(currentQuestion));
+        form.append('response', String(optionIndex));
         form.append('isCorrect', String(isCorrect));
 
         axios.post(scriptUrl, form, {
