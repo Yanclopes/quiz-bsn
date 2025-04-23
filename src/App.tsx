@@ -48,21 +48,18 @@ function App() {
 
         const scriptUrl = import.meta.env.VITE_APP_SCRIPT_URL;
 
-        axios.post(
-            scriptUrl,
-            {
-                id,
-                question: currentQuestion,
-                response: optionIndex,
-                isCorrect
-            },
-            {
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                withCredentials: false
+        const form = new URLSearchParams();
+        form.append('id', id);
+        form.append('question', String(currentQuestion));
+        form.append('response', String(currentQuestion));
+        form.append('isCorrect', String(isCorrect));
+
+        axios.post(scriptUrl, form, {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
             }
-        );
+        });
+
 
         setTimeout(() => {
             if (currentQuestion + 1 < totalQuestoes) {
