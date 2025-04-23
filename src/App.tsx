@@ -7,6 +7,7 @@ import terra_3 from "./assets/low.png";
 import logo from "./assets/logo.png";
 import { getOrCreateUserId } from "./utils/getOrCreateUserId.ts";
 import { getCookie, setCookie } from "./utils/cookieUtils.ts";
+import axios from "axios";
 
 const imagens = [terra_1, terra_2, terra_3];
 
@@ -47,19 +48,21 @@ function App() {
 
         const scriptUrl = import.meta.env.VITE_APP_SCRIPT_URL;
 
-        fetch(scriptUrl, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            mode: 'cors',
-            body: JSON.stringify({
+        axios.post(
+            scriptUrl,
+            {
                 id,
                 question: currentQuestion,
                 response: optionIndex,
                 isCorrect
-            })
-        });
+            },
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                withCredentials: false
+            }
+        );
 
         setTimeout(() => {
             if (currentQuestion + 1 < totalQuestoes) {
