@@ -107,11 +107,11 @@ function App() {
                         </h2>
                     ) : (
                         <div>
-                            
+
                             <h1 className="title">Quiz Salvando o Planeta</h1>
 
                             <p className="info">Desenvolvido pela turma da 5ª Fase do curso de Sistemas da Informação da UNIDAVI</p>
-                        
+
 
                             <div className="quiz">
                                 <div className="progress-bar-container">
@@ -132,6 +132,45 @@ function App() {
                                             : selectedAnswer !== null && isCorrect
                                                 ? "correctNotSelected"
                                                 : "";
+            {showIntro ? (
+                <div className="intro-container">
+                    <h1>🌍 Bem-vindo ao Desafio da Sustentabilidade!</h1>
+                    <ul className="rules-list">
+                        <li>🧠 Serão <strong>{totalQuestoes}</strong> perguntas com alternativas.</li>
+                        <li>❌ A cada <strong>{(totalQuestoes / imagens.length).toFixed(0)}</strong> erros, o planeta piora visualmente.</li>
+                        <li>🌱 Todas as perguntas são sobre sustentabilidade.</li>
+                        <li>💡 Sua missão: ajudar a salvar o planeta!</li>
+                    </ul>
+                    <button className="start-button" onClick={() => setShowIntro(false)}>
+                        Começar
+                    </button>
+                </div>
+            ) : (
+                <>
+                    {currentQuestion >= totalQuestoes ? (
+                        <h2 className='endcard'>
+                            Fim de jogo, você acertou um total de {totalQuestoes - errorCount}
+                        </h2>
+                    ) : (
+                        <div className="quiz">
+                            <div className="progress-bar-container">
+                                <div
+                                    className="progress-bar"
+                                    style={{ width: `${(currentQuestion / totalQuestoes) * 100}%` }}
+                                />
+                            </div>
+                            <h2>{questoes[currentQuestion].pergunta}</h2>
+                            <div className="options-container">
+                                {questoes[currentQuestion].opcoes.map((opcao, index) => {
+                                    const isCorrect = index === questoes[currentQuestion].respostaCorreta;
+                                    const isSelected = selectedAnswer === index;
+                                    const buttonClass = isSelected
+                                        ? isCorrect
+                                            ? "correct selected"
+                                            : "incorrect selected"
+                                        : selectedAnswer !== null && isCorrect
+                                            ? "correctNotSelected"
+                                            : "";
 
                                         return (
                                             <button
@@ -144,6 +183,17 @@ function App() {
                                         );
                                     })}
                                 </div>
+                                    return (
+                                        <button
+                                            key={index}
+                                            onClick={() => handleAnswer(index)}
+                                            className={buttonClass}
+                                        >
+                                            {opcao}
+                                        </button>
+                                    );
+                                })}
+                            </div>
 
                                 <div className="explanation-container">
                                     <p
@@ -166,17 +216,17 @@ function App() {
                     )}
                 </>
             )}
-            
+
             <div className="credits">
                 <p className="info"><strong>Professor: Diego Pasqualini</strong></p>
                 <div className="popupContainer">
                     <p className="info">Acadêmicos</p>
                     <div className="popup">
-                        
+
                         <h4>Acadêmicos Responsáveis</h4>
                         <div className="academicsContainer">
-                        
-                            {contatos.map((registro) => 
+
+                            {contatos.map((registro) =>
                                 <div className="academicItem">
                                     <h5>{registro.nome}</h5>
                                     <p>{registro.email}</p>
@@ -186,6 +236,26 @@ function App() {
                     </div>
                 </div>
             </div>
+                            <div className="explanation-container">
+                                <p
+                                    style={{
+                                        color:
+                                            selectedAnswer !== null
+                                                ? selectedAnswer === questoes[currentQuestion].respostaCorreta
+                                                    ? "green"
+                                                    : "red"
+                                                : "black"
+                                    }}
+                                >
+                                    {selectedAnswer !== null
+                                        ? questoes[currentQuestion].explicacaoErro[selectedAnswer]
+                                        : ""}
+                                </p>
+                            </div>
+                        </div>
+                    )}
+                </>
+            )}
 
             <div className="earth-container">
                 <img

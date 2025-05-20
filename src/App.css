@@ -221,8 +221,29 @@ p{
 .academicItem p{
     margin: 0;
     color: gray;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
+.logo:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.4s ease-in-out;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 768px) {
@@ -230,7 +251,7 @@ p{
     padding: 0;
     justify-content: flex-end;
   }
-  
+
   .credits{
         top: 15px;
         right: 15px;
@@ -308,6 +329,33 @@ p{
     border-radius: 15px;
   }
 }
+
+.intro-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.rules-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+  font-size: 1.2rem;
+}
+
+.start-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: #45a049;
+}
+
 
 /* Medium devices (landscape tablets, 768px and up) */
 
