@@ -8,6 +8,7 @@ import logo from "./assets/logo.png";
 import { getOrCreateUserId } from "./utils/getOrCreateUserId.ts";
 import { getCookie, setCookie } from "./utils/cookieUtils.ts";
 import axios from "axios";
+import { contatos } from "./store/contatos.ts";
 
 const imagens = [terra_1, terra_2, terra_3];
 
@@ -81,51 +82,78 @@ function App() {
             )}
 
             {currentQuestion < totalQuestoes && (
-                <div className="quiz">
-                    <h2>{questoes[currentQuestion].pergunta}</h2>
-                    <div className="options-container">
-                        {questoes[currentQuestion].opcoes.map((opcao, index) => {
-                            const isCorrect = index === questoes[currentQuestion].respostaCorreta;
-                            const isSelected = selectedAnswer === index;
-                            const buttonClass = isSelected
-                                ? isCorrect
-                                    ? "correct selected"
-                                    : "incorrect selected"
-                                : selectedAnswer !== null && isCorrect
-                                    ? "correctNotSelected"
-                                    : "";
+                <div>
+                    
+                    <h1>Quiz Salvando o Planeta</h1>
 
-                            return (
-                                <button
-                                    key={index}
-                                    onClick={() => handleAnswer(index)}
-                                    className={buttonClass}
-                                >
-                                    {opcao}
-                                </button>
-                            );
-                        })}
-                    </div>
+                <p className="info">Desenvolvido pela turma da 5ª Fase do curso de Sistemas da Informação da UNIDAVI</p>
+            
+                    <div className="quiz">                    
+                        <h2>{questoes[currentQuestion].pergunta}</h2>
+                        <div className="options-container">
+                            {questoes[currentQuestion].opcoes.map((opcao, index) => {
+                                const isCorrect = index === questoes[currentQuestion].respostaCorreta;
+                                const isSelected = selectedAnswer === index;
+                                const buttonClass = isSelected
+                                    ? isCorrect
+                                        ? "correct selected"
+                                        : "incorrect selected"
+                                    : selectedAnswer !== null && isCorrect
+                                        ? "correctNotSelected"
+                                        : "";
 
-                    <div className="explanation-container">
-                        <p
-                            style={{
-                                color:
-                                    selectedAnswer !== null
-                                        ? selectedAnswer === questoes[currentQuestion].respostaCorreta
-                                            ? "Green"
-                                            : "Red"
-                                        : "black"
-                            }}
-                        >
-                            {selectedAnswer !== null
-                                ? questoes[currentQuestion].explicacaoErro[selectedAnswer]
-                                : ""}
-                        </p>
+                                return (
+                                    <button
+                                        key={index}
+                                        onClick={() => handleAnswer(index)}
+                                        className={buttonClass}
+                                    >
+                                        {opcao}
+                                    </button>
+                                );
+                            })}
+                        </div>
+
+                        <div className="explanation-container">
+                            <p
+                                style={{
+                                    color:
+                                        selectedAnswer !== null
+                                            ? selectedAnswer === questoes[currentQuestion].respostaCorreta
+                                                ? "Green"
+                                                : "Red"
+                                            : "black"
+                                }}
+                            >
+                                {selectedAnswer !== null
+                                    ? questoes[currentQuestion].explicacaoErro[selectedAnswer]
+                                    : ""}
+                            </p>
+                        </div>
                     </div>
                 </div>
             )}
 
+            <div className="credits">
+                <p className="info"><strong>Professor: Diego Pasqualini</strong></p>
+                <div className="popupContainer">
+                    <p className="info">Acadêmicos</p>
+                    <div className="popup">
+                        
+                        <h4>Acadêmicos Responsáveis</h4>
+                        <div className="academicsContainer">
+                        
+                            {contatos.map((registro) => 
+                                <div className="academicItem">
+                                    <h5>{registro.nome}</h5>
+                                    <p>{registro.email}</p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
             <div className="earth-container">
                 <img
                     alt="terra"

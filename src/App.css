@@ -106,12 +106,101 @@ p{
   width: 120px;
 }
 
+.info{
+  color: gray;
+}
+
+.credits .info{
+  margin: 0;
+}
+
+.credits{
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  text-align: left;
+}
+
+.popupContainer{
+  width: fit-content;
+}
+
+.popupContainer p{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.popup h4{
+    padding: 1rem 000;
+    border-bottom: 1px solid gainsboro;
+    padding-bottom: 0.5rem;
+    margin: 0;
+    text-align: center;
+  }
+
+.popup{
+    padding: 0 1rem;
+    background: white;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    max-height: 35rem;
+    overflow: hidden;
+    width: 20rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px gray;
+    flex-direction: column;
+}
+
+.popupContainer:hover .popup {display: flex;}
+
+.academicsContainer{
+    margin-bottom: 1rem;
+    overflow-y: auto;
+}
+
+.academicItem{
+    padding: 0.5rem 1rem;
+    padding-left: 0;
+}
+
+.academicItem h5{
+    margin: 0;
+}
+
+.academicItem p{
+    margin: 0;
+    color: gray;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 768px) {
   body {
     padding: 0;
     justify-content: flex-end;
+  }
+
+  .credits{
+        top: 15px;
+        right: 15px;
+        left: unset;
+        bottom: unset;
+  }
+
+  .popupContainer{
+    width: 100%;
+    text-align: right;
+  }
+
+  .popup{
+    bottom: unset;
+    top: 0;
+    right: 0;
+    left: unset;
+  }
+
+  h1{
+    display: none;
   }
 
   .logo{
