@@ -1,31 +1,21 @@
-/* Base */
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 150px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   height: 100vh;
   background-color: #f0f0f0;
+  overflow: hidden;
   flex-direction: column;
   color: black;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
 }
 
-/* Container com scroll */
 .quiz-container {
   position: relative;
   z-index: 10;
-  width: 100%;
-  max-width: 500px;
-  max-height: 90vh;
-  overflow-y: auto;
+  width: 500px;
   text-align: center;
-  padding: 1rem;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .options-container {
@@ -52,26 +42,30 @@ button {
   font-weight: bold;
 }
 
-/* Terra decorativa */
 .earth-container {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 400px;
-  height: 400px;
+  bottom: -100px;
+  right: -100px;
+  width: 900px;
+  height: 900px;
   z-index: -1;
-  pointer-events: none;
+}
+
+.quiz{
+  z-index: 10;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .rotating-earth {
   width: 100%;
   height: auto;
   position: absolute;
-  right: 0;
-  bottom: 0;
-  animation: rotate 20s linear infinite;
-  opacity: 0.3;
-  filter: blur(1px);
+  right: -200px;
+  animation: rotate 10s linear infinite;
+  transition: opacity 0.5s ease-in-out;
 }
 
 @keyframes rotate {
@@ -83,7 +77,6 @@ button {
   }
 }
 
-/* Respostas */
 .correct {
   background-color: green;
   color: white;
@@ -100,13 +93,12 @@ button {
   border: 2px solid green;
 }
 
-p {
+p{
   font-size: 0.75rem;
   color: green;
   font-style: italic;
 }
 
-/* Logo */
 .logo {
   position: fixed;
   left: 10px;
@@ -114,7 +106,6 @@ p {
   width: 120px;
   cursor: pointer;
   transition: transform 0.2s ease;
-  z-index: 99;
 }
 
 .logo:hover {
@@ -122,7 +113,6 @@ p {
   opacity: 0.8;
 }
 
-/* Progresso */
 .progress-bar-container {
   width: 100%;
   height: 10px;
@@ -138,7 +128,7 @@ p {
   transition: width 0.4s ease-in-out;
 }
 
-/* Introdução e regras */
+
 .intro-container {
   text-align: center;
   padding: 2rem;
@@ -165,38 +155,40 @@ p {
   background-color: #45a049;
 }
 
-/* Créditos */
-.info {
+
+.info{
   color: gray;
 }
 
-.credits {
+.credits .info{
+  margin: 0;
+}
+
+.credits{
   position: fixed;
   bottom: 10px;
   left: 10px;
   text-align: left;
-  font-size: 0.75rem;
-  z-index: 99;
 }
 
-/* Popup */
-.popupContainer {
+.popupContainer{
   width: fit-content;
 }
 
-.popupContainer p {
+.popupContainer p{
   text-decoration: underline;
   cursor: pointer;
 }
 
-.popup h4 {
-  padding: 1rem 0;
+.popup h4{
+  padding: 1rem 000;
   border-bottom: 1px solid gainsboro;
+  padding-bottom: 0.5rem;
   margin: 0;
   text-align: center;
 }
 
-.popup {
+.popup{
   padding: 0 1rem;
   background: white;
   display: none;
@@ -210,106 +202,208 @@ p {
   flex-direction: column;
 }
 
-.popupContainer:hover .popup {
-  display: flex;
-}
+.popupContainer:hover .popup {display: flex;}
 
-/* Acadêmicos */
-.academicsContainer {
+.academicsContainer{
   margin-bottom: 1rem;
   overflow-y: auto;
 }
 
-.academicItem {
+.academicItem{
   padding: 0.5rem 1rem;
   padding-left: 0;
 }
 
-.academicItem h5 {
+.academicItem h5{
   margin: 0;
 }
 
-.academicItem p {
+.academicItem p{
   margin: 0;
   color: gray;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
-/* Responsivo: Mobile */
+.logo:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.4s ease-in-out;
+}
+
+/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 768px) {
   body {
     padding: 0;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
-  .credits {
+  .credits{
     top: 15px;
     right: 15px;
     left: unset;
     bottom: unset;
   }
 
-  .popupContainer {
+  .popupContainer{
     width: 100%;
     text-align: right;
   }
 
-  .popup {
+  .popup{
     bottom: unset;
     top: 0;
     right: 0;
     left: unset;
   }
 
-  .title {
+  .title{
     display: none;
   }
 
-  .intro-container {
+  .intro-container{
     background: white;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     box-shadow: 0 0 10px gray;
   }
 
-  .logo {
+  .logo{
     width: 75px;
   }
 
-  .earth-container {
-    width: 250px;
-    height: 250px;
+  .quiz{
+    padding: 25px;
+    background: white;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    box-shadow: 0 0 10px gray;
+  }
+
+  .quiz-container{
+    width: -webkit-fill-available;
+    z-index: 1;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .earth-container{
+    z-index: -1;
+    width: -webkit-fill-available;
+    left: 0;
+    top: 3rem;
     bottom: 0;
     right: 0;
   }
 
-  .rotating-earth {
-    opacity: 0.3;
+  .rotating-earth{
+    left: 0;
+    width: -webkit-fill-available;
+    right: 0;
   }
 
-  h2 {
+  h2{
     font-size: 1.25rem;
   }
 
-  .endcard {
+  .endcard{
     background-color: white;
     padding: 20px;
-    margin: 5rem 1rem;
+    margin: 10rem 2rem;
     box-shadow: 0 0 10px gray;
     border-radius: 15px;
   }
 }
 
-/* Tablets */
+.intro-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.rules-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem;
+  font-size: 1.2rem;
+}
+
+.start-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: #45a049;
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  #root {
+  body{
+    padding: 0;
+    align-items: center
+  }
+
+  .intro-container h1{
+    font-size: 1.5rem !important;
+  }
+
+  #root{
     width: 70%;
   }
 
-  .earth-container {
-    width: 350px;
-    height: 350px;
-    right: -10rem;
+  .rotating-earth{
+    left: 0;
+    width: -webkit-fill-available;
+    right: 0;
   }
+
+  .earth-container{
+    width: 65%;
+    height: 65%;
+    right: -15rem;
+    z-index: -1;
+  }
+
+  .logo{
+    z-index: -1;
+  }
+
+  .quiz{
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+  }
+
+  .quiz-container{
+    width: -webkit-fill-available;
+    z-index: 1;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
 }
